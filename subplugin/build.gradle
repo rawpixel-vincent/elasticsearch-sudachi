@@ -38,6 +38,9 @@ def distZip = tasks.register('distZip', Zip) {
     dependsOn embedVersion, packageJars
     archiveBaseName.set("${esKind.engine.kind}-${esKind.version}-$archivesBaseName")
     from("build/package/${version}/${esKind.engine.kind}-${esKind.version}")
+    from('src/main/extras') {
+        include 'entitlement-policy.yaml'
+    }
 }
 
 spotless {

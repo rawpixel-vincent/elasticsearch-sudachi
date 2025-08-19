@@ -1,0 +1,6 @@
+ALL-UNNAMED:
+  - files:
+      - path: "<<plugin>>/..."
+        mode: read
+      - path: "<<config>>/sudachi/..."
+        mode: read

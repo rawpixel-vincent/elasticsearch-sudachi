@@ -86,6 +86,9 @@ def distZip = tasks.register('distZip', Zip) {
     dependsOn embedVersion, packageJars, packageSpiJars
     archiveBaseName.set("${esKind.engine.kind}-${esKind.version}-$archivesBaseName")
     from("build/package/${version}/${esKind.engine.kind}-${esKind.version}", 'LICENSE', 'README.md')
+    from('src/main/extras') {
+        include 'entitlement-policy.yaml'
+    }
 }
 
 artifacts {

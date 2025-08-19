@@ -69,7 +69,7 @@ if [[ -d "$ES_DIR/plugins/analysis-sudachi" ]]; then
   "$ES_DIR/bin/$ES_PLUGIN_BIN" remove analysis-sudachi
 fi
 
-"$ES_DIR/bin/$ES_PLUGIN_BIN" install "$PLUGIN"
+"$ES_DIR/bin/$ES_PLUGIN_BIN" install --batch "$PLUGIN"
 
 if [[ "$SHOULD_RUN_TEST01" == "true" ]]; then
   TEST_PLUGIN_PATH="$(readlink -f "$TEST_PLUGIN_PATH")"
@@ -82,8 +82,8 @@ if [[ "$SHOULD_RUN_TEST01" == "true" ]]; then
     "$ES_DIR/bin/$ES_PLUGIN_BIN" remove analysis-sudachi-childtest
   fi
 
-  "$ES_DIR/bin/$ES_PLUGIN_BIN" install "analysis-icu"
-  "$ES_DIR/bin/$ES_PLUGIN_BIN" install "$TEST_PLUGIN"
+  "$ES_DIR/bin/$ES_PLUGIN_BIN" install --batch "analysis-icu"
+  "$ES_DIR/bin/$ES_PLUGIN_BIN" install --batch "$TEST_PLUGIN"
 fi
 
 
