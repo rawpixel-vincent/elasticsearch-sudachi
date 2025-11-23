@@ -65,7 +65,7 @@ enum OsSupport implements EngineSupport {
             return Os20
         } else if (version.ge(2, 7) && version.lt(2, 10)) {
             return Os27
-        } else if (version.ge(2, 10)) {
+        } else if (version.ge(2, 10) && version.lt(3, 0)) {
             return Os210
         } else if (version.ge(3, 0)) {
             return Os30
