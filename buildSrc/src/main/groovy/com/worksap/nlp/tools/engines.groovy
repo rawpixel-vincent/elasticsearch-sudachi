@@ -51,7 +51,6 @@ enum OsSupport implements EngineSupport {
     Os20("os-2.00"),
     Os27("os-2.07"),
     Os210("os-2.10"),
-    Os30("os-3.00"),
 
     String tag
 
@@ -65,10 +64,8 @@ enum OsSupport implements EngineSupport {
             return Os20
         } else if (version.ge(2, 7) && version.lt(2, 10)) {
             return Os27
-        } else if (version.ge(2, 10) && version.lt(3, 0)) {
+        } else if (version.ge(2, 10)) {
             return Os210
-        } else if (version.ge(3, 0)) {
-            return Os30
         }
         throw new Exception("unsupported version")
     }
